@@ -1,0 +1,48 @@
+<div>
+  <div>
+    <h4 class="text-white mb-2">Flex Grow: Crescimento Único (flex-grow: 1)</h4>
+  </div>
+  <div class="fs-6 mb-2 text-white-50">Apenas o Item 2 tem flex-grow: 1. Ele se expande para ocupar todo o espaço disponível restante no container.</div>
+  <div class="flex-parent" style="display: flex; gap: 1rem">
+    <div class="flex-child">Item 1</div>
+    <div class="flex-child" style="flex-grow: 1; background-color: #0d6efd;">Item 2 (flex-grow: 1)</div>
+    <div class="flex-child">Item 3</div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Flex Grow: Crescimento Proporcional Igual (flex-grow: 1 para todos)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">Todos os itens têm flex-grow: 1. Eles se expandem e dividem o espaço restante de forma igualitária.</div>
+    <div class="flex-parent" style="display: flex; gap: 1rem">
+      <div class="flex-child" style="flex-grow: 1; background-color: #198754;">Item 1 (flex-grow: 1)</div>
+      <div class="flex-child" style="flex-grow: 1; background-color: #198754;">Item 2 (flex-grow: 1)</div>
+      <div class="flex-child" style="flex-grow: 1; background-color: #198754;">Item 3 (flex-grow: 1)</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Flex Grow: Crescimento Assimétrico (Proporção 1:2:1)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">Item 1 (flex-grow: 1) | Item 2 (flex-grow: 2) | Item 3 (flex-grow: 1). O Item 2 consome o dobro de espaço restante.</div>
+    <div class="flex-parent" style="display: flex; gap: 1rem">
+      <div class="flex-child" style="flex-grow: 1; background-color: #6c757d;">Item 1 (grow: 1)</div>
+      <div class="flex-child" style="flex-grow: 2; background-color: #ca6c35;">Item 2 (grow: 2)</div>
+      <div class="flex-child" style="flex-grow: 1; background-color: #6c757d;">Item 3 (grow: 1)</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Flex Grow: Eixo Vertical (flex-direction: column)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">O container tem <code>flex-direction: column</code> e altura fixa de 250px. O Item 2 tem <code>flex-grow: 1</code> e se expande verticalmente para preencher todo o espaço restante.</div>
+    <div class="flex-parent" style="display: flex; flex-direction: column; height: 250px; gap: 0.5rem">
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 1</div>
+      <div class="flex-child" style="flex-grow: 1; background-color: #0d6efd; font-size: 1.2rem; padding: 0.5rem 1rem;">Item 2 (flex-grow: 1)</div>
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 3</div>
+    </div>
+  </div>
+</div>
+

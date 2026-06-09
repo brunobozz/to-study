@@ -38,7 +38,21 @@ export const FEATURES_ROUTES: Routes = [
     loadComponent: () => import('./flex-grids/flex-grids.component').then(m => m.FlexGridsComponent),
     children: [
       { path: '', redirectTo: 'flexbox', pathMatch: 'full' },
-      { path: 'flexbox', loadComponent: () => import('./flex-grids/flexbox/flexbox.component').then(m => m.FlexboxComponent) },
+      {
+        path: 'flexbox',
+        loadComponent: () => import('./flex-grids/flexbox/flexbox.component').then(m => m.FlexboxComponent),
+        children: [
+          { path: '', redirectTo: 'basics', pathMatch: 'full' },
+          { path: 'basics', loadComponent: () => import('./flex-grids/flexbox/flexbox-basics/flexbox-basics.component').then(m => m.FlexboxBasicsComponent) },
+          { path: 'wrap', loadComponent: () => import('./flex-grids/flexbox/flex-wrap/flex-wrap.component').then(m => m.FlexWrapComponent) },
+          { path: 'justify', loadComponent: () => import('./flex-grids/flexbox/justify-content/justify-content.component').then(m => m.JustifyContentComponent) },
+          { path: 'align-items', loadComponent: () => import('./flex-grids/flexbox/align-items/align-items.component').then(m => m.AlignItemsComponent) },
+          { path: 'align-content', loadComponent: () => import('./flex-grids/flexbox/align-content/align-content.component').then(m => m.AlignContentComponent) },
+          { path: 'order', loadComponent: () => import('./flex-grids/flexbox/flex-order/flex-order.component').then(m => m.FlexOrderComponent) },
+          { path: 'grow', loadComponent: () => import('./flex-grids/flexbox/flex-grow/flex-grow.component').then(m => m.FlexGrowComponent) },
+          { path: 'align-self', loadComponent: () => import('./flex-grids/flexbox/align-self/align-self.component').then(m => m.AlignSelfComponent) }
+        ]
+      },
       { path: 'grid', loadComponent: () => import('./flex-grids/grid/grid.component').then(m => m.GridComponent) }
     ]
   },

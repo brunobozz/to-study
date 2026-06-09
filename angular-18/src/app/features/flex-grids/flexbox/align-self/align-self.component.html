@@ -1,0 +1,55 @@
+<div>
+  <div>
+    <h4 class="text-white mb-2">Align Self: flex-end (Row)</h4>
+  </div>
+  <div class="fs-6 mb-2 text-white-50">
+    O container tem <code>align-items: flex-start</code>. O Item 2 sobrescreve esse comportamento com <code>align-self: flex-end</code>.
+  </div>
+  <div class="flex-parent" style="display: flex; flex-direction: row; align-items: flex-start; height: 180px; justify-content: space-around; gap: 0.5rem;">
+    <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 1</div>
+    <div class="flex-child" style="align-self: flex-end; background-color: #0d6efd; font-size: 1.2rem; padding: 0.5rem 1rem;">Item 2 (end)</div>
+    <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 3</div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Align Self: center (Row)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">
+      O container tem <code>align-items: stretch</code>. O Item 2 sobrescreve esse comportamento com <code>align-self: center</code> (e não se estica).
+    </div>
+    <div class="flex-parent" style="display: flex; flex-direction: row; align-items: stretch; height: 180px; justify-content: space-around; gap: 0.5rem;">
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 1</div>
+      <div class="flex-child" style="align-self: center; background-color: #198754; font-size: 1.2rem; padding: 0.5rem 1rem;">Item 2 (center)</div>
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 3</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Align Self: stretch (Row)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">
+      O container tem <code>align-items: center</code>. O Item 2 sobrescreve esse comportamento com <code>align-self: stretch</code>.
+    </div>
+    <div class="flex-parent" style="display: flex; flex-direction: row; align-items: center; height: 180px; justify-content: space-around; gap: 0.5rem;">
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 1</div>
+      <div class="flex-child" style="align-self: stretch; background-color: #ca6c35; font-size: 1.2rem; padding: 0.5rem 1rem; display: flex; align-items: center;">Item 2 (stretch)</div>
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem;">Item 3</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Align Self: flex-end (Column)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">
+      O container tem <code>flex-direction: column</code> e <code>align-items: flex-start</code>. O Item 2 sobrescreve com <code>align-self: flex-end</code> (movendo-se horizontalmente).
+    </div>
+    <div class="flex-parent" style="display: flex; flex-direction: column; align-items: flex-start; height: 200px; justify-content: space-around; gap: 0.5rem;">
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem; width: fit-content;">Item 1</div>
+      <div class="flex-child" style="align-self: flex-end; background-color: #0d6efd; font-size: 1.2rem; padding: 0.5rem 1rem; width: fit-content;">Item 2 (end)</div>
+      <div class="flex-child" style="font-size: 1.2rem; padding: 0.5rem 1rem; width: fit-content;">Item 3</div>
+    </div>
+  </div>
+</div>

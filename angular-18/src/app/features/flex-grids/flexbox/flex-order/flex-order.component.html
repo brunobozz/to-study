@@ -1,0 +1,35 @@
+<div>
+  <div>
+    <h4 class="text-white mb-2">Order: Valor Negativo (order: -1)</h4>
+  </div>
+  <div class="fs-6 mb-2 text-white-50">O Item 3 tem order: -1. Ele é renderizado primeiro na ordem visual, mesmo sendo o último no HTML.</div>
+  <div class="flex-parent" style="display: flex; gap: 1rem">
+    <div class="flex-child">Item 1</div>
+    <div class="flex-child">Item 2</div>
+    <div class="flex-child" style="order: -1; background-color: #0d6efd;">Item 3 (order: -1)</div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Order: Valor Positivo (order: 1)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">O Item 1 tem order: 1. Ele é empurrado para o final da ordem visual, após os itens com ordem padrão (0).</div>
+    <div class="flex-parent" style="display: flex; gap: 1rem">
+      <div class="flex-child" style="order: 1; background-color: #0d6efd;">Item 1 (order: 1)</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Order: Ordenação Personalizada</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">A ordem visual é definida explicitamente: Item 2 (order: 1) | Item 3 (order: 2) | Item 1 (order: 3).</div>
+    <div class="flex-parent" style="display: flex; gap: 1rem">
+      <div class="flex-child" style="order: 3; background-color: #dc3545;">Item 1 (order: 3)</div>
+      <div class="flex-child" style="order: 1; background-color: #198754;">Item 2 (order: 1)</div>
+      <div class="flex-child" style="order: 2; background-color: #ffc107; color: #000;">Item 3 (order: 2)</div>
+    </div>
+  </div>
+</div>
