@@ -1,0 +1,74 @@
+<div>
+  <div>
+    <h4 class="text-white mb-2">Grid Template Columns: Unidades Fracionárias (fr)</h4>
+  </div>
+  <div class="fs-6 mb-2 text-white-50">
+    A unidade <code>fr</code> representa uma fração do espaço disponível no container. No primeiro exemplo abaixo, dividimos em 3 partes iguais (<code>1fr 1fr 1fr</code>). No segundo exemplo, dividimos de forma assimétrica (<code>1fr 2fr 1fr</code>). Ambos os exemplos exibem 9 itens distribuídos em 3 linhas completas.
+  </div>
+  
+  <div class="fs-7 text-white-50 mb-1">Layout Proporcional Igual (<code>1fr 1fr 1fr</code> - 3 Colunas x 3 Linhas):</div>
+  <div class="grid-parent" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+    <div class="grid-child">Item 1</div>
+    <div class="grid-child">Item 2</div>
+    <div class="grid-child">Item 3</div>
+    <div class="grid-child">Item 4</div>
+    <div class="grid-child">Item 5</div>
+    <div class="grid-child">Item 6</div>
+    <div class="grid-child">Item 7</div>
+    <div class="grid-child">Item 8</div>
+    <div class="grid-child">Item 9</div>
+  </div>
+
+  <div class="fs-7 text-white-50 mb-1 mt-2">Layout Assimétrico (<code>1fr 2fr 1fr</code> - 3 Colunas x 3 Linhas):</div>
+  <div class="grid-parent" style="grid-template-columns: 1fr 2fr 1fr; gap: 1rem;">
+    <div class="grid-child">Item 1</div>
+    <div class="grid-child" style="background-color: #ca6c35; border-color: #da7c45;">Item 2 (2fr)</div>
+    <div class="grid-child">Item 3</div>
+    <div class="grid-child">Item 4</div>
+    <div class="grid-child" style="background-color: #ca6c35; border-color: #da7c45;">Item 5 (2fr)</div>
+    <div class="grid-child">Item 6</div>
+    <div class="grid-child">Item 7</div>
+    <div class="grid-child" style="background-color: #ca6c35; border-color: #da7c45;">Item 8 (2fr)</div>
+    <div class="grid-child">Item 9</div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Grid Template Columns: repeat() + minmax() para Responsividade</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">
+      Ao usar <code>repeat(auto-fit, minmax(150px, 1fr))</code>, o Grid calcula quantas colunas cabem no container. Com 12 itens inseridos, eles se organizarão dinamicamente preenchendo no mínimo 3 linhas na maioria das resoluções.
+    </div>
+    <div class="grid-parent" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+      <div class="grid-child">Item 1</div>
+      <div class="grid-child">Item 2</div>
+      <div class="grid-child">Item 3</div>
+      <div class="grid-child">Item 4</div>
+      <div class="grid-child">Item 5</div>
+      <div class="grid-child">Item 6</div>
+      <div class="grid-child">Item 7</div>
+      <div class="grid-child">Item 8</div>
+      <div class="grid-child">Item 9</div>
+      <div class="grid-child">Item 10</div>
+      <div class="grid-child">Item 11</div>
+      <div class="grid-child">Item 12</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div>
+      <h4 class="text-white mb-2">Grid Template Columns: Mistura de Unidades (px + fr)</h4>
+    </div>
+    <div class="fs-6 mb-2 text-white-50">
+      Layout clássico de 2 colunas: a primeira fixa com <code>200px</code> e a segunda fluida com <code>1fr</code>. Com 6 itens inseridos, o Grid formará exatamente 3 linhas completas de exibição.
+    </div>
+    <div class="grid-parent" style="grid-template-columns: 200px 1fr; gap: 1rem;">
+      <div class="grid-child" style="background-color: #0d6efd; border-color: #1a7dfd;">Menu (200px)</div>
+      <div class="grid-child">Conteúdo (1fr)</div>
+      <div class="grid-child" style="background-color: #0d6efd; border-color: #1a7dfd;">Menu (200px)</div>
+      <div class="grid-child">Conteúdo (1fr)</div>
+      <div class="grid-child" style="background-color: #0d6efd; border-color: #1a7dfd;">Menu (200px)</div>
+      <div class="grid-child">Conteúdo (1fr)</div>
+    </div>
+  </div>
+</div>

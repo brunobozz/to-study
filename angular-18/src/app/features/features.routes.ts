@@ -53,7 +53,14 @@ export const FEATURES_ROUTES: Routes = [
           { path: 'align-self', loadComponent: () => import('./flex-grids/flexbox/align-self/align-self.component').then(m => m.AlignSelfComponent) }
         ]
       },
-      { path: 'grid', loadComponent: () => import('./flex-grids/grid/grid.component').then(m => m.GridComponent) }
+      {
+        path: 'grid',
+        loadComponent: () => import('./flex-grids/grid/grid.component').then(m => m.GridComponent),
+        children: [
+          { path: '', redirectTo: 'columns', pathMatch: 'full' },
+          { path: 'columns', loadComponent: () => import('./flex-grids/grid/grid-template-columns/grid-template-columns.component').then(m => m.GridTemplateColumnsComponent) }
+        ]
+      }
     ]
   },
   {
