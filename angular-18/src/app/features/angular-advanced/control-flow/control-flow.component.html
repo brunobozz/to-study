@@ -1,0 +1,46 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Built-in Control Flow (Fluxo Nático)</h4>
+        <p class="text-white-50">
+          O Angular introduziu um novo mecanismo nativo para controle de fluxo no template que substitui totalmente as diretivas estruturais antigas como <code>*ngIf</code>, <code>*ngFor</code> e <code>*ngSwitch</code>.
+        </p>
+        <p class="text-white-50">
+          Principais benefícios da sintaxe moderna:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><strong>Performance Superior:</strong> O algoritmo de reconciliação para renderizar listas é significativamente mais rápido que o mecanismo antigo baseado em <code>IterableDiffers</code>.</li>
+          <li><strong>Sem imports necessários:</strong> Como o controle de fluxo é integrado diretamente ao compilador de templates do Angular, componentes Standalone não precisam importar o <code>CommonModule</code> ou diretivas individuais de fluxo de controle.</li>
+          <li><strong>Tipagem Estrita (Type Safety):</strong> O novo fluxo de controle garante melhor inferência de tipos em variáveis criadas dentro dos blocos.</li>
+          <li><strong>Bloco <code>&#64;empty</code>:</strong> Permite renderizar layouts de fallbacks diretamente em loops vazios de forma nativa e sem tags aninhadas extras.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Lista Dinâmica de Devs</h4>
+        <div class="card bg-dark border-secondary p-3 mb-3">
+          <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-sm btn-success" (click)="resetList()">Restaurar Lista</button>
+            <button class="btn btn-sm btn-danger" (click)="clearList()">Limpar Lista</button>
+          </div>
+
+          <ul class="list-group border border-secondary rounded overflow-hidden mb-0">
+            <!-- Novo @for com @empty integrado! -->
+            @for (dev of devs(); track dev.id) {
+              <li class="list-group-item bg-black text-white border-secondary d-flex justify-content-between">
+                <span class="fs-7">{{ dev.name }}</span>
+                <span class="badge bg-secondary-subtle border border-secondary text-secondary">{{ dev.role }}</span>
+              </li>
+            } @empty {
+              <li class="list-group-item bg-black text-white-50 border-secondary text-center py-3">
+                <i class="bi bi-person-x-fill text-danger fs-5"></i>
+                <div class="fs-7 mt-1">Nenhum dev cadastrado no momento. (Gatilho &#64;empty disparado!)</div>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="html"></app-code-highlighter>
+      </div>
+    </div>
+  

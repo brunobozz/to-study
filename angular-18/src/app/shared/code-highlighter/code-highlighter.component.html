@@ -1,0 +1,17 @@
+
+    <div class="card bg-black border-secondary-subtle overflow-hidden shadow-sm mb-3">
+      <div class="card-header bg-dark border-secondary-subtle d-flex justify-content-between align-items-center py-1.5 px-3">
+        <span class="text-white-50 font-monospace fs-8">{{ language }}</span>
+        <button class="btn btn-sm btn-outline-secondary py-0.5 px-2 fs-8" (click)="copyCode()">
+          @if (copied()) {
+            <i class="bi bi-check2 text-success"></i> Copiado!
+          } @else {
+            <i class="bi bi-clipboard"></i> Copiar
+          }
+        </button>
+      </div>
+      <div class="card-body p-0">
+        <pre class="m-0 p-3 overflow-x-auto"><code class="text-info font-monospace fs-7">{{ code }}</code></pre>
+      </div>
+    </div>
+  

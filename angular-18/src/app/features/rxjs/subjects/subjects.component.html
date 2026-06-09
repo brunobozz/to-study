@@ -1,0 +1,58 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Subject vs BehaviorSubject</h4>
+        <p class="text-white-50">
+          Um <strong>Subject</strong> é ao mesmo tempo um <em>Observable</em> e um <em>Observer</em>. Ele permite emitir valores para múltiplos inscritos (multicast).
+        </p>
+        <p class="text-white-50">
+          Os tipos mais comuns de Subjects e suas características fundamentais são:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><strong>Subject:</strong> Não possui estado inicial e não armazena memória de emissões passadas. Subscritores tardios perdem todas as emissões anteriores.</li>
+          <li><strong>BehaviorSubject:</strong> Armazena o <em>último valor emitido</em> e exige um valor padrão em sua inicialização. Novos subscritores recebem o valor atual imediatamente ao assinar.</li>
+        </ul>
+        <div class="card bg-body-tertiary border-secondary-subtle">
+          <div class="card-body">
+            <h6 class="card-title text-warning"><i class="bi bi-exclamation-triangle-fill"></i> Atenção Sênior</h6>
+            <p class="mb-0 text-white-50 fs-7">
+              Ao usar <code>BehaviorSubject</code> em serviços, exponha-o sempre como um Observable puro usando o método <code>.asObservable()</code>. Isso encapsula o controle de emissão impedindo componentes externos de forçarem emissões impróprias com <code>.next()</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Simulação de Inscrição</h4>
+        <div class="card bg-dark border-secondary p-3 mb-3">
+          <div class="d-flex gap-2 mb-3 justify-content-between">
+            <button class="btn btn-primary btn-sm flex-grow-1" (click)="emitValue()">Emitir Próximo Valor</button>
+            <button class="btn btn-outline-warning btn-sm" (click)="resetSimulation()">Reiniciar Simulação</button>
+          </div>
+          
+          <div class="row g-2">
+            <div class="col-6">
+              <h6 class="text-white fs-7">Subject (Valor Inicial: Nenhum)</h6>
+              <ul class="list-group bg-black p-2 rounded border border-secondary text-info font-monospace fs-7" style="height: 120px; overflow-y: auto;">
+                @for (val of subjectValues; track $index) {
+                  <li class="list-unstyled">Recebido: {{ val }}</li>
+                } @empty {
+                  <li class="list-unstyled text-muted">Nenhum valor...</li>
+                }
+              </ul>
+            </div>
+            <div class="col-6">
+              <h6 class="text-white fs-7">BehaviorSubject (Valor Inicial: 100)</h6>
+              <ul class="list-group bg-black p-2 rounded border border-secondary text-warning font-monospace fs-7" style="height: 120px; overflow-y: auto;">
+                @for (val of behaviorValues; track $index) {
+                  <li class="list-unstyled">Recebido: {{ val }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

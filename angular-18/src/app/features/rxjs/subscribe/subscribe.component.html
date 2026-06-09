@@ -1,0 +1,38 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Observable & Subscribe</h4>
+        <p class="text-white-50">
+          Um <strong>Observable</strong> é uma fonte preguiçosa (lazy) que envia (push) fluxos de dados assíncronos ao longo do tempo.
+          Ele permanece inativo até que um consumidor execute o método <code>subscribe()</code>.
+        </p>
+        <p class="text-white-50">
+          No Angular 18, o gerenciamento de ciclos de vida de inscrições tornou-se mais moderno. Com a introdução do <code>takeUntilDestroyed</code>, podemos vincular a inscrição ao ciclo de vida do componente através da injeção do <code>DestroyRef</code>, substituindo o tradicional padrão de criar um <code>Subject</code> auxiliar para controle de destruição no <code>ngOnDestroy</code>.
+        </p>
+
+        <div class="card bg-body-tertiary border-secondary-subtle mb-3">
+          <div class="card-body">
+            <h6 class="card-title text-success"><i class="bi bi-shield-check"></i> Padrão Sênior (Clean Code)</h6>
+            <ul class="text-white-50 fs-7 mb-0">
+              <li>Evite inscrições encadeadas (nested subscribes). Use operadores de achatamento como <code>switchMap</code> ou <code>mergeMap</code>.</li>
+              <li>Utilize o pipe <code>async</code> no template sempre que possível, pois ele lida com a inscrição e cancelamento de forma totalmente transparente e automática.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Contador Reativo</h4>
+        <div class="card bg-dark border-secondary p-3 mb-3 text-center">
+          <h2 class="display-4 font-monospace text-primary mb-3">{{ counter() }}</h2>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-primary btn-sm" (click)="startCounter()" [disabled]="running()">Iniciar Contador</button>
+            <button class="btn btn-danger btn-sm" (click)="stopCounter()" [disabled]="!running()">Parar Contador</button>
+          </div>
+          <small class="text-white-50 mt-3 d-block">Status: {{ running() ? 'Executando Inscrição...' : 'Parado' }}</small>
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

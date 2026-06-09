@@ -1,0 +1,22 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Roteamento Preguiçoso (Lazy Routing)</h4>
+        <p class="text-white-50">
+          O <strong>Lazy Loading</strong> atrasa o carregamento de recursos não utilizados até que a rota correspondente seja acessada pelo usuário. Isso reduz drasticamente o tamanho do bundle inicial transmitido ao navegador (melhorando métricas cruciais como LCP - <em>Largest Contentful Paint</em>).
+        </p>
+        <p class="text-white-50">
+          No Angular moderno com a API <strong>Standalone</strong>, não há necessidade de criar arquivos do tipo <code>NgModule</code> secundários. Nós simplesmente carregamos componentes específicos ou arquivos de sub-rotas de forma preguiçosa usando a sintaxe de importação dinâmica do JavaScript:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>loadComponent</code>: Carrega dinamicamente apenas o arquivo do componente solicitado.</li>
+          <li><code>loadChildren</code>: Carrega dinamicamente arquivos de configurações de rotas filhas inteiras (nested routing).</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Estrutura de Rotas (Exemplo Angular 18)</h4>
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

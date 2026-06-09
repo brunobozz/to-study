@@ -1,0 +1,30 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Mocking em Testes Unitários</h4>
+        <p class="text-white-50">
+          O teste unitário foca em validar uma unidade de código isolada (ex: uma classe de serviço) sem acionar suas dependências reais (como bancos de dados ou chamadas HTTP de rede).
+        </p>
+        <p class="text-white-50">
+          Para simular dependências e monitorar chamadas de métodos, criamos **Mocks** ou **Spies**:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>SpyObj</code> / <code>spyOn</code> (Jasmine) ou <code>jest.fn()</code> (Jest): Permite interceptar execuções de métodos das dependências e mockar os retornos (síncronos ou assíncronos via Observables/Promises).</li>
+          <li>Fornecimento no <code>TestBed</code>: Injetamos o mock no container de DI do Angular através do token <code>{{ '{' }} provide: ServicoReal, useValue: servicoMockado {{ '}' }}</code>.</li>
+        </ul>
+        <div class="card bg-body-tertiary border-secondary-subtle">
+          <div class="card-body">
+            <h6 class="card-title text-info"><i class="bi bi-info-circle-fill"></i> Nota Sênior</h6>
+            <p class="mb-0 text-white-50 fs-7">
+              Evite importar o <code>HttpClientModule</code> real em seus testes unitários. Em vez disso, use o <code>HttpClientTestingModule</code> (que fornece o <code>HttpTestingController</code> para interceptar e mockar chamadas) ou mocke o <code>HttpClient</code> diretamente usando spies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Exemplo de Teste de Serviço</h4>
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

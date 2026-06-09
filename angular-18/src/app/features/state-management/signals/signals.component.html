@@ -1,0 +1,43 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Reatividade com Angular Signals</h4>
+        <p class="text-white-50">
+          <strong>Signals</strong> são primitivos reativos síncronos que mantêm um valor e notificam os consumidores interessados quando esse valor muda. Eles introduzem uma nova forma de reatividade fina (fine-grained), eliminando a necessidade de verificar toda a árvore de componentes em busca de mudanças (melhorando o desempenho de renderização).
+        </p>
+        <p class="text-white-50">
+          Principais funções do ecossistema de Signals:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>signal(valorInicial)</code>: Cria um sinal gravável (Writable Signal). Podemos atualizar seu valor usando o método <code>.set(novoValor)</code> ou mutar com base no valor anterior usando <code>.update(val => novoVal)</code>.</li>
+          <li><code>computed(() => expressao)</code>: Cria um sinal somente-leitura dependente de outros sinais. O cálculo é feito sob demanda (lazy) e seu valor é memorizado (cached). Ele se recalcula somente quando um sinal interno de dependência mudar.</li>
+          <li><code>effect(() => execucao)</code>: Executa uma rotina secundária sempre que os sinais lidos dentro dele mudarem. Ideal para logs, chamadas externas ou persistência (ex: localStorage). Deve ser declarado no construtor.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Carrinho Reativo</h4>
+        <div class="card bg-dark border-secondary p-3 mb-3">
+          <ul class="list-group list-group-flush mb-3 border border-secondary rounded overflow-hidden">
+            @for(item of cart(); track item.id) {
+              <div class="list-group-item bg-black text-white border-secondary d-flex justify-content-between align-items-center py-2">
+                <span class="fs-7">{{ item.name }} (R$ {{ item.price }})</span>
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" (click)="updateQuantity(item.id, -1)">-</button>
+                  <span class="font-monospace fw-bold fs-7">{{ item.quantity }}</span>
+                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" (click)="updateQuantity(item.id, 1)">+</button>
+                </div>
+              </div>
+            }
+          </ul>
+
+          <div class="d-flex justify-content-between text-white border-top border-secondary pt-2 fs-6">
+            <span><strong>Total de Itens:</strong> {{ totalItems() }}</span>
+            <span class="text-primary"><strong>Total Geral:</strong> R$ {{ totalPrice() }}</span>
+          </div>
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

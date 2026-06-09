@@ -1,0 +1,33 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100 border-end border-secondary" style="width: 280px; min-height: calc(100vh - 61px);">
+  <ul class="nav nav-pills flex-column mb-auto gap-1">
+    @for (item of menuItems; track item.title) {
+      <li class="nav-item">
+        <a [routerLink]="[item.route]" 
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{exact: item.route === '/'}"
+           class="nav-link text-white d-flex align-items-center gap-2 py-2 px-3 rounded transition-all">
+          <i [class]="item.icon + ' fs-5'"></i>
+          <span class="fw-medium">{{ item.title }}</span>
+        </a>
+        @if (item.subitems && item.subitems.length > 0) {
+          <ul class="nav flex-column ms-4 mt-1 gap-1 border-start border-secondary-subtle ps-2">
+            @for (sub of item.subitems; track sub.title) {
+              <li>
+                <a [routerLink]="[item.route, sub.route]" 
+                   routerLinkActive="text-primary fw-bold" 
+                   class="nav-link text-white-50 py-1 px-2 fs-7 transition-all">
+                  {{ sub.title }}
+                </a>
+              </li>
+            }
+          </ul>
+        }
+      </li>
+    }
+  </ul>
+  <hr class="border-secondary">
+  <div class="d-flex flex-column gap-1 text-white-50 fs-8">
+    <div><strong>Estudo:</strong> Frontend & Angular 18</div>
+    <div><strong>Foco:</strong> Angular 18, RxJS, Jest, Nx</div>
+  </div>
+</div>

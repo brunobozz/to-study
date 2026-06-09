@@ -1,0 +1,359 @@
+<div class="g-4">
+  <div>
+    <h4 class="text-white mb-2">Flexbox</h4>
+  </div>
+  <div class="fs-6">Display: Flex | Gap: 1rem</div>
+  <div class="flex-parent" style="display: flex; gap: 1rem">
+    <div class="flex-child">Item 1</div>
+    <div class="flex-child">Item 2</div>
+    <div class="flex-child">Item 3</div>
+  </div>
+
+  <hr />
+
+  <h4>Flex Wrap</h4>
+  <div>
+    <div class="fs-6">Flex-wrap: No-wrap</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; flex-wrap: nowrap; overflow-x: auto"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+      <div class="flex-child">Item 4</div>
+      <div class="flex-child">Item 5</div>
+      <div class="flex-child">Item 6</div>
+      <div class="flex-child">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child">Item 9</div>
+      <div class="flex-child">Item 10</div>
+    </div>
+
+    <div class="fs-6">Flex-wrap: Wrap</div>
+    <div class="flex-parent" style="display: flex; gap: 1rem; flex-wrap: wrap">
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+      <div class="flex-child">Item 4</div>
+      <div class="flex-child">Item 5</div>
+      <div class="flex-child">Item 6</div>
+      <div class="flex-child">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child">Item 9</div>
+      <div class="flex-child">Item 10</div>
+    </div>
+
+    <div class="fs-6">Flex-wrap: Wrap-reverse</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; flex-wrap: wrap-reverse"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+      <div class="flex-child">Item 4</div>
+      <div class="flex-child">Item 5</div>
+      <div class="flex-child">Item 6</div>
+      <div class="flex-child">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child">Item 9</div>
+      <div class="flex-child">Item 10</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h4>Justify Content</h4>
+  <div>
+    <div class="fs-6">Justify-content: End</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; justify-content: end"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+
+    <div class="fs-6">Justify-content: Center</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; justify-content: center"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+
+    <div class="fs-6">Justify-content: Space-between</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; justify-content: space-between"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+
+    <div class="fs-6">Justify-content: Space-around</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; justify-content: space-around"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+
+    <div class="fs-6">Justify-content: Space-evenly</div>
+    <div
+      class="flex-parent"
+      style="display: flex; gap: 1rem; justify-content: space-evenly"
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h4>Align Items</h4>
+  <div class="row">
+    <div class="col-6">
+      <div class="fs-6">Align-items: Start</div>
+      <div
+        class="flex-parent"
+        style="
+          height: 200px;
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+          align-items: start;
+        "
+      >
+        <div class="flex-child" style="height: 6rem">Item 1</div>
+        <div class="flex-child" style="height: 9rem">Item 2</div>
+        <div class="flex-child" style="height: 4rem">Item 3</div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="fs-6">Align-items: End</div>
+      <div
+        class="flex-parent"
+        style="
+          height: 200px;
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+          align-items: end;
+        "
+      >
+        <div class="flex-child" style="height: 6rem">Item 1</div>
+        <div class="flex-child" style="height: 9rem">Item 2</div>
+        <div class="flex-child" style="height: 4rem">Item 3</div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="fs-6">Align-items: Center</div>
+      <div
+        class="flex-parent"
+        style="
+          height: 200px;
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div class="flex-child" style="height: 6rem">Item 1</div>
+        <div class="flex-child" style="height: 9rem">Item 2</div>
+        <div class="flex-child" style="height: 4rem">Item 3</div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="fs-6">Align-items: Baseline</div>
+      <div
+        class="flex-parent"
+        style="
+          height: 200px;
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+          align-items: baseline;
+        "
+      >
+        <div class="flex-child" style="padding-bottom: 50px">Item 1</div>
+        <div class="flex-child" style="padding-top: 50px">Item 2</div>
+        <div class="flex-child" style="padding-top: 50px; padding-bottom: 50px">
+          Item 3
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="fs-6">Align-items: Stretch</div>
+      <div
+        class="flex-parent"
+        style="
+          height: 200px;
+          display: flex;
+          gap: 0.5rem;
+          justify-content: space-between;
+          align-items: stretch;
+        "
+      >
+        <div class="flex-child" style="flex-grow: 1">Item 1</div>
+        <div class="flex-child" style="flex-grow: 1">Item 2</div>
+        <div class="flex-child" style="flex-grow: 1">Item 3</div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h4>Align Content</h4>
+  <div>
+    <div class="fs-6">Align-content: Start</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: flex-start;
+      "
+    >
+      <div class="flex-child">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child">Item 3</div>
+      <div class="flex-child">Item 4</div>
+      <div class="flex-child">Item 5</div>
+      <div class="flex-child">Item 6</div>
+      <div class="flex-child">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child">Item 9</div>
+      <div class="flex-child">Item 10</div>
+    </div>
+
+    <div class="fs-6">Align-content: End</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: flex-end;
+      "
+    >
+      <div class="flex-child" style="flex-grow: 1">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child" style="flex-grow: 4">Item 3</div>
+      <div class="flex-child" style="flex-grow: 1">Item 4</div>
+      <div class="flex-child" style="flex-grow: 5">Item 5</div>
+      <div class="flex-child" style="flex-grow: 2">Item 6</div>
+      <div class="flex-child" style="flex-grow: 1">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child" style="flex-grow: 3">Item 9</div>
+      <div class="flex-child" style="flex-grow: 5">Item 10</div>
+    </div>
+
+    <div class="fs-6">Align-content: Center</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: center;
+      "
+    >
+      <div class="flex-child" style="flex-grow: 1">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child" style="flex-grow: 4">Item 3</div>
+      <div class="flex-child" style="flex-grow: 1">Item 4</div>
+      <div class="flex-child" style="flex-grow: 5">Item 5</div>
+      <div class="flex-child" style="flex-grow: 2">Item 6</div>
+      <div class="flex-child" style="flex-grow: 1">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child" style="flex-grow: 3">Item 9</div>
+      <div class="flex-child" style="flex-grow: 5">Item 10</div>
+    </div>
+
+    <div class="fs-6">Align-content: Stretch</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: stretch;
+      "
+    >
+      <div class="flex-child" style="flex-grow: 1">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child" style="flex-grow: 4">Item 3</div>
+      <div class="flex-child" style="flex-grow: 1">Item 4</div>
+      <div class="flex-child" style="flex-grow: 5">Item 5</div>
+      <div class="flex-child" style="flex-grow: 2">Item 6</div>
+      <div class="flex-child" style="flex-grow: 1">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child" style="flex-grow: 3">Item 9</div>
+      <div class="flex-child" style="flex-grow: 5">Item 10</div>
+    </div>
+
+    <div class="fs-6">Align-content: Space-between</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: space-between;
+      "
+    >
+      <div class="flex-child" style="flex-grow: 1">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child" style="flex-grow: 4">Item 3</div>
+      <div class="flex-child" style="flex-grow: 1">Item 4</div>
+      <div class="flex-child" style="flex-grow: 5">Item 5</div>
+      <div class="flex-child" style="flex-grow: 2">Item 6</div>
+      <div class="flex-child" style="flex-grow: 1">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child" style="flex-grow: 3">Item 9</div>
+      <div class="flex-child" style="flex-grow: 5">Item 10</div>
+    </div>
+
+    <div class="fs-6">Align-content: Space-around</div>
+    <div
+      class="flex-parent"
+      style="
+        height: 300px;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: space-around;
+      "
+    >
+      <div class="flex-child" style="flex-grow: 1">Item 1</div>
+      <div class="flex-child">Item 2</div>
+      <div class="flex-child" style="flex-grow: 4">Item 3</div>
+      <div class="flex-child" style="flex-grow: 1">Item 4</div>
+      <div class="flex-child" style="flex-grow: 5">Item 5</div>
+      <div class="flex-child" style="flex-grow: 2">Item 6</div>
+      <div class="flex-child" style="flex-grow: 1">Item 7</div>
+      <div class="flex-child">Item 8</div>
+      <div class="flex-child" style="flex-grow: 3">Item 9</div>
+      <div class="flex-child" style="flex-grow: 5">Item 10</div>
+    </div>
+  </div>
+</div>

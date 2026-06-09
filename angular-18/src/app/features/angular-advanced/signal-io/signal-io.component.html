@@ -1,0 +1,45 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Signal Inputs, Outputs & Model</h4>
+        <p class="text-white-50">
+          O Angular 17.2+ e 18 introduzem APIs baseadas em Signals para transferência de dados entre componentes, substituindo os decoradores tradicionais para obter consistência de reatividade fina.
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>input()</code> / <code>input.required()</code>: Substitui o decorador <code>&#64;Input()</code>. Os valores recebidos são representados como sinais de leitura. Como são sinais, você pode usá-los em cálculos de <code>computed()</code> e monitorar em <code>effect()</code> nativamente sem precisar de <code>ngOnChanges</code>.</li>
+          <li><code>output()</code>: Substitui o decorador <code>&#64;Output()</code> e o <code>EventEmitter</code>. Fornece uma API mais simples e leve, mantendo compatibilidade com eventos normais.</li>
+          <li><code>model()</code>: Cria um canal de comunicação de duas vias (two-way binding) reativo. Se o componente filho modificar o valor do sinal, o componente pai é atualizado automaticamente, e vice-versa.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Painel Pai de Sinalização</h4>
+        <div class="card bg-dark border-secondary p-3 mb-3">
+          <div class="mb-3">
+            <span class="text-white-50 fs-8 d-block mb-1">Estado do Sinal no Componente Pai (model):</span>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge" [class.bg-danger]="parentStatus() === 'Pendente'" [class.bg-success]="parentStatus() === 'Concluído'">
+                {{ parentStatus() }}
+              </span>
+              <button class="btn btn-sm btn-outline-light py-0.5 px-2 fs-8" (click)="toggleParentStatus()">Alternar no Pai</button>
+            </div>
+          </div>
+
+          <!-- Componente Filho -->
+          <app-child-task 
+            [title]="taskTitle()" 
+            [(status)]="parentStatus" 
+            (taskAlert)="handleChildAlert($event)">
+          </app-child-task>
+          
+          @if (alertMsg()) {
+            <div class="alert alert-info border-info mt-3 py-2 fs-7 m-0">
+              <i class="bi bi-info-circle-fill"></i> {{ alertMsg() }}
+            </div>
+          }
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

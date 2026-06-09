@@ -1,0 +1,50 @@
+<div class="row g-4">
+  <div class="col-md-6">
+    <h4 class="text-white">CSS Grid (2D Layout)</h4>
+    <p class="text-white-50 fs-7">
+      O CSS Grid cria estruturas bidimensionais, organizando o alinhamento de linhas e colunas paralelamente. Essencial para layouts gerais de páginas complexas.
+    </p>
+    <p class="text-white-50 fs-7">
+      A propriedade <code>grid-template-columns</code> define as colunas e a largura de cada uma. A propriedade <code>gap</code> especifica o espaçamento entre células.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h4 class="text-white">Prática: Playground Grid</h4>
+    <div class="card bg-body-tertiary border-secondary-subtle p-3 mb-3">
+      <div class="row g-2 mb-3">
+        <div class="col-6">
+          <label class="form-label text-white-50 fs-8">grid-template-columns:</label>
+          <select class="form-select form-select-sm bg-black text-light border-secondary" (change)="setGridColumns($event)">
+            <option value="1fr 1fr 1fr">1fr 1fr 1fr (3 colunas)</option>
+            <option value="1fr 2fr">1fr 2fr (2 colunas assimétricas)</option>
+            <option value="repeat(auto-fill, minmax(80px, 1fr))">repeat(auto-fill, minmax(80px, 1fr))</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <label class="form-label text-white-50 fs-8">gap (Espaçamento):</label>
+          <select class="form-select form-select-sm bg-black text-light border-secondary" (change)="setGridGap($event)">
+            <option value="0.5rem">8px (0.5rem)</option>
+            <option value="1rem">16px (1rem)</option>
+            <option value="2rem">32px (2rem)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grid Visual Container -->
+      <div class="p-3 bg-black border border-secondary rounded d-grid" 
+           [style.grid-template-columns]="gridColumns()"
+           [style.gap]="gridGap()"
+           style="min-height: 120px;">
+        <div class="bg-primary text-white p-2 rounded text-center fw-bold">Grid 1</div>
+        <div class="bg-success text-white p-2 rounded text-center fw-bold">Grid 2</div>
+        <div class="bg-danger text-white p-2 rounded text-center fw-bold">Grid 3</div>
+        <div class="bg-warning text-dark p-2 rounded text-center fw-bold">Grid 4</div>
+        <div class="bg-info text-dark p-2 rounded text-center fw-bold">Grid 5</div>
+        <div class="bg-secondary text-white p-2 rounded text-center fw-bold">Grid 6</div>
+      </div>
+    </div>
+
+    <app-code-highlighter [code]="gridCode()" language="css"></app-code-highlighter>
+  </div>
+</div>

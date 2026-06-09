@@ -1,0 +1,58 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Deferrable Views (&#64;defer)</h4>
+        <p class="text-white-50">
+          As <strong>Deferrable Views</strong> representam uma das inovações mais importantes do Angular moderno. Elas permitem adiar o carregamento de componentes pesados, pipes ou diretivas diretamente no template usando a sintaxe nativa declarativa <code>&#64;defer</code>.
+        </p>
+        <p class="text-white-50">
+          Blocos estruturais de uma visualização adiável:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>&#64;defer</code>: O bloco de conteúdo principal que sofrerá o carregamento tardio.</li>
+          <li><code>&#64;placeholder</code>: Bloco de conteúdo inicial visível antes do carregamento começar.</li>
+          <li><code>&#64;loading</code>: Conteúdo temporário exibido durante o download do chunk de JavaScript correspondente.</li>
+          <li><code>&#64;error</code>: Mensagem fallback exibida caso o download do pacote JS falhe.</li>
+        </ul>
+        <p class="text-white-50">
+          Você pode disparar o carregamento usando <strong>gatilhos</strong> (triggers):
+          <code>on idle</code> (padrão, quando a página termina de carregar),
+          <code>on viewport</code> (quando o conteúdo entra na tela),
+          <code>on interaction</code> (no clique ou foco),
+          <code>on hover</code> (quando o mouse passa por cima),
+          <code>on timer(2s)</code> (após um atraso) e
+          <code>when condicao</code> (com base em um sinal/variável boolean).
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Prática: Testando Gatilhos de Defer</h4>
+        
+        <div class="card bg-dark border-secondary p-3 mb-3">
+          <h6 class="text-white fs-7 mb-2">1. Defer no Clique (on interaction)</h6>
+          @defer (on interaction) {
+            <app-heavy-details></app-heavy-details>
+          } @placeholder {
+            <div class="alert alert-secondary border border-secondary text-center py-3 m-0" style="cursor: pointer;">
+              <i class="bi bi-hand-index-thumb-fill text-primary"></i> Clique aqui para baixar e renderizar
+            </div>
+          } @loading {
+            <div class="text-center py-3">
+              <span class="spinner-border spinner-border-sm text-primary" role="status"></span> Baixando bundle JS...
+            </div>
+          }
+          
+          <h6 class="text-white fs-7 mb-2 mt-4">2. Defer no Mouseover (on hover)</h6>
+          @defer (on hover) {
+            <app-heavy-details></app-heavy-details>
+          } @placeholder {
+            <div class="alert alert-secondary border border-secondary text-center py-3 m-0">
+              <i class="bi bi-mouse3-fill text-warning"></i> Passe o mouse aqui para carregar
+            </div>
+          }
+        </div>
+
+        <app-code-highlighter [code]="codeSample" language="html"></app-code-highlighter>
+      </div>
+    </div>
+  

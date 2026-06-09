@@ -1,0 +1,24 @@
+
+    <div class="card bg-black border-secondary p-3 text-white">
+      <h6 class="text-success fw-bold m-0"><i class="bi bi-box-fill"></i> Componente Filho (Signal-based)</h6>
+      
+      <div class="mb-2 mt-2">
+        <span class="text-white-50 fs-8">Sinal de Entrada (input):</span>
+        <span class="fw-bold d-block text-info fs-7">{{ title() }}</span>
+      </div>
+
+      <div class="mb-3">
+        <span class="text-white-50 fs-8">Modelo Bidirecional (model):</span>
+        <div class="d-flex align-items-center gap-2 mt-1">
+          <span class="badge" [class.bg-danger]="status() === 'Pendente'" [class.bg-success]="status() === 'Concluído'">
+            {{ status() }}
+          </span>
+          <button class="btn btn-xs btn-outline-warning py-0.5 px-2 fs-8" (click)="toggleStatus()">Alternar Filho</button>
+        </div>
+      </div>
+
+      <button class="btn btn-sm btn-primary w-100 fs-7" (click)="triggerAlert()">
+        Disparar Evento (output)
+      </button>
+    </div>
+  

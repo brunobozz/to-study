@@ -1,0 +1,24 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Arquitetura NgRx (Redux no Angular)</h4>
+        <p class="text-white-50">
+          O <strong>NgRx Store</strong> é um framework de gerenciamento de estado global e reativo baseado em RxJS que segue o padrão Redux. Ele é projetado para grandes aplicações mantendo o fluxo de dados unidirecional e previsível.
+        </p>
+        
+        <h6 class="text-primary fw-bold fs-7">Fluxo Unidirecional de Dados:</h6>
+        <ol class="text-white-50 fs-7">
+          <li><strong>Componente:</strong> Dispara (dispatches) uma <strong>Action</strong> expressando uma intenção do usuário ou evento do ciclo de vida.</li>
+          <li><strong>Effects:</strong> Interceptam a Action caso ela exija uma ação assíncrona (como uma chamada HTTP). Quando finalizado o processo, o Effect dispara outra Action (ex: Success ou Failure).</li>
+          <li><strong>Reducers:</strong> Funções puras síncronas que capturam a Action e aplicam as mutações imutáveis no estado, retornando um novo estado.</li>
+          <li><strong>Store:</strong> Atualiza o estado centralizado e notifica os subscritores.</li>
+          <li><strong>Selectors:</strong> Componentes leem dados do Store usando Selectors memorizados, garantindo que o componente re-renderize apenas se a sua fatia de dados mudar.</li>
+        </ol>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Exemplo de Código Completo</h4>
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  

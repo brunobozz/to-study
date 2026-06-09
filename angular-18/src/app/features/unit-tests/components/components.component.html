@@ -1,0 +1,23 @@
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h4 class="text-white">Teoria: Testando Componentes (Lógica & DOM)</h4>
+        <p class="text-white-50">
+          Testar componentes envolve validar se a lógica em TypeScript é corretamente refletida no layout HTML e se as interações do usuário (como cliques ou digitações) disparam as ações corretas.
+        </p>
+        <p class="text-white-50">
+          Termos chave no teste de componentes:
+        </p>
+        <ul class="text-white-50 fs-7">
+          <li><code>ComponentFixture</code>: O invólucro (wrapper) criado pelo <code>TestBed</code>. Dá acesso tanto à instância TypeScript do componente (<code>fixture.componentInstance</code>) quanto ao elemento renderizado no DOM (<code>fixture.nativeElement</code>).</li>
+          <li><code>fixture.detectChanges()</code>: Força a rodada de detecção de mudanças do Angular. Essencial após inicializar propriedades ou interagir com o DOM para ver as alterações refletidas no template.</li>
+          <li><code>By.css()</code>: Utilitário para consultar elementos no DOM de forma robusta e segura independente da plataforma de renderização.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="text-white">Spec de Componente Standalone</h4>
+        <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+      </div>
+    </div>
+  
