@@ -1,0 +1,70 @@
+<div class="row g-4">
+  <div class="col-md-6">
+    <h4 class="text-white">Teoria: Resiliência com RxJS</h4>
+    <p class="text-white-50">
+      Em aplicações reais, requisições HTTP podem falhar temporariamente devido a oscilações de rede. O RxJS oferece operadores integrados e eficientes para tratar erros de forma reativa e manter a resiliência do sistema.
+    </p>
+    <ul class="text-white-50 fs-7">
+      <li><strong>retry(n):</strong> Assina novamente o Observable fonte até <code>n</code> vezes adicionais caso ele emita um erro, permitindo re-executar requisições instáveis antes de desistir.</li>
+      <li><strong>catchError(fn):</strong> Intercepta falhas definitivas no fluxo de dados, permitindo retornar um Observable alternativo de fallback seguro (evitando que o fluxo quebre de vez).</li>
+    </ul>
+
+    <div class="card bg-body-tertiary border-secondary-subtle mt-4">
+      <div class="card-body">
+        <h6 class="card-title text-success"><i class="bi bi-info-circle-fill"></i> Ordem dos Operadores</h6>
+        <p class="mb-0 text-white-50 fs-7">
+          O operador <code>retry</code> deve ser posicionado antes do <code>catchError</code>. Dessa forma, as retentativas rodam primeiro e, caso todas falhem, o <code>catchError</code> intercepta a falha final.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h4 class="text-white">Prática: Simulador de Instabilidade</h4>
+    <div class="card bg-body-tertiary border-secondary-subtle p-3 mb-3">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <label class="text-white-50 fs-8 mb-0">Retentativas (retry):</label>
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-outline-secondary py-1 px-2.5 fs-8" [class.active]="retryCount === 1" (click)="setRetryCount(1)">1</button>
+          <button type="button" class="btn btn-outline-secondary py-1 px-2.5 fs-8" [class.active]="retryCount === 2" (click)="setRetryCount(2)">2</button>
+          <button type="button" class="btn btn-outline-secondary py-1 px-2.5 fs-8" [class.active]="retryCount === 3" (click)="setRetryCount(3)">3</button>
+        </div>
+        
+        <button class="btn btn-success btn-sm ms-auto fs-8" [disabled]="status === 'loading'" (click)="startSimulation()">
+          @if (status === 'loading') {
+            <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Testando...
+          } @else {
+            <i class="bi bi-play-fill"></i> Disparar Chamada
+          }
+        </button>
+        <button class="btn btn-outline-danger btn-sm fs-8" [disabled]="status === 'loading'" (click)="resetSimulation()">
+          Limpar
+        </button>
+      </div>
+
+      <!-- Console Logs -->
+      <div class="p-3 bg-black border border-secondary rounded font-monospace fs-8 text-light mb-3" style="min-height: 150px; max-height: 200px; overflow-y: auto;">
+        @if (attempts.length === 0) {
+          <div class="text-white-50 italic">Clique em "Disparar Chamada" para iniciar a simulação...</div>
+        }
+        @for (log of attempts; track log) {
+          <div class="mb-1">{{ log }}</div>
+        }
+      </div>
+
+      <!-- Resultado do status -->
+      @if (status === 'success') {
+        <div class="alert alert-success border-success-subtle bg-success-subtle text-success-emphasis py-2 px-3 fs-7 mb-0">
+          <i class="bi bi-check-circle-fill me-1"></i> <strong>{{ resultMessage }}</strong>
+        </div>
+      }
+      @if (status === 'error') {
+        <div class="alert alert-warning border-warning-subtle bg-warning-subtle text-warning-emphasis py-2 px-3 fs-7 mb-0">
+          <i class="bi bi-exclamation-triangle-fill me-1"></i> <strong>{{ resultMessage }}</strong>
+        </div>
+      }
+    </div>
+
+    <app-code-highlighter [code]="codeSample" language="typescript"></app-code-highlighter>
+  </div>
+</div>

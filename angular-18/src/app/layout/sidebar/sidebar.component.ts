@@ -25,7 +25,8 @@ export class SidebarComponent {
       subitems: [
         { title: 'Observable & Subscribe', route: 'subscribe' },
         { title: 'Subjects vs BehaviorSubjects', route: 'subjects' },
-        { title: 'Operadores Comuns', route: 'operators' }
+        { title: 'Operadores Comuns', route: 'operators' },
+        { title: 'Tratamento de Erros (retry/catch)', route: 'error-handling' }
       ]
     },
     { 

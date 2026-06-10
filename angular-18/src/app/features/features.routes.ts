@@ -8,7 +8,8 @@ export const FEATURES_ROUTES: Routes = [
       { path: '', redirectTo: 'subscribe', pathMatch: 'full' },
       { path: 'subscribe', loadComponent: () => import('./rxjs/subscribe/subscribe.component').then(m => m.SubscribeComponent) },
       { path: 'subjects', loadComponent: () => import('./rxjs/subjects/subjects.component').then(m => m.SubjectsComponent) },
-      { path: 'operators', loadComponent: () => import('./rxjs/operators/operators.component').then(m => m.OperatorsComponent) }
+      { path: 'operators', loadComponent: () => import('./rxjs/operators/operators.component').then(m => m.OperatorsComponent) },
+      { path: 'error-handling', loadComponent: () => import('./rxjs/error-handling/error-handling.component').then(m => m.ErrorHandlingComponent) }
     ]
   },
   {
